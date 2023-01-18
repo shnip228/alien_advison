@@ -26,6 +26,7 @@ class AlienInvasion:
         self.aliens = pygame.sprite.Group()
         self._create_fleet()
         self.play_button = Button(self, "Play")
+        self.clock = pygame.time.Clock()
 
     def run_game(self):
         while True:
@@ -35,6 +36,7 @@ class AlienInvasion:
                 self._update_bullets()
                 self._update_aliens()
             self._update_screen()
+            self.clock.tick(self.settings.fps)
 
     def _check_events(self):
         for event in pygame.event.get():

@@ -12,6 +12,7 @@ class Bullet(Sprite):
                                 self.settings.bullet_height)
         self.rect.midtop = ai_game.ship.rect.midtop
         self.y = float(self.rect.y)
+        self.ai_game = ai_game
 
     def update(self):
         self.y -= self.settings.bullet_speed
